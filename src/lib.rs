@@ -4,6 +4,10 @@ pub struct IntSorter {
 }
 
 impl IntSorter {
+  fn new() -> IntSorter {
+    IntSorter{ data: vec![], sorted: true }
+  }
+
   fn put(&mut self, i : i64) {
     self.data.push(i);
   }
@@ -15,12 +19,13 @@ impl IntSorter {
 
 #[no_mangle]
 pub extern "C" fn sorter_new() -> Box<IntSorter> {
-  Box::new(IntSorter{ data: vec![], sorted: true })
+  Box::new( IntSorter::new() )
 }
 
 #[no_mangle]
 pub extern "C" fn sorter_cleanup(s : Box<IntSorter>) {
-  // Destroy
+  println!("Destroy IntSorter Instance");
+  // Explicit drop removes warning
   drop(s);
 }
 
