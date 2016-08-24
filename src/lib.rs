@@ -13,7 +13,7 @@ impl IntSorter {
   }
 
   fn get(&mut self) -> i64 {
-    self.data.pop().unwrap()
+    self.data.pop().unwrap_or(0)
   }
 }
 
