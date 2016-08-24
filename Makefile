@@ -1,4 +1,12 @@
 
+CC = clang
+CXX = clang++
+
+#CC = gcc
+#CXX = g++
+
+
+
 ifeq ($(shell uname),Darwin)
     LDFLAGS := -Wl,-dead_strip
 else
@@ -22,10 +30,10 @@ target/debug/libintsorter.a: src/lib.rs Cargo.toml
 	cargo build
 
 target/main_c.o: src/main.c | target
-	$(CC) -o $@ -c $<
+	$(CC) -std=c11 -o $@ -c $<
 
 target/main_cpp.o: src/main.cpp | target
-	$(CXX) -o $@ -c $<
+	$(CXX) -std=c++11 -o $@ -c $<
 
 clean:
 	rm -rf target
