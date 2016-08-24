@@ -6,7 +6,7 @@ This is based upon the work of [Alex's Rust FFI Examples](https://github.com/ale
 
 # Contributions
 
-If you would like to add/fix or change something, send a PR.
+If you would like to add/fix or change something, send a PR or open an issue.
 
 # Running your self
 
