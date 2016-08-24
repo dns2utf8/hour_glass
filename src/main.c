@@ -21,7 +21,8 @@ int main(int argc, char* argv[]) {
 	sorter_put(s, 23);
 	sorter_put(s, 42);
 
-	for (int i = 0; i < 5; ++i) {
+	// Iterate over all values and exhaust the container by 2
+	for (int i = 0; i < 5 + 2; ++i) {
 		printf("%i: %i\n", i, sorter_get(s));
 	}
 

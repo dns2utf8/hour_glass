@@ -13,7 +13,8 @@ int main() {
 	sorter.put(23);
 	sorter.put(42);
 
-	for (int i = 0; i < 5; ++i) {
+	// Iterate over all values and exhaust the container by 2
+	for (int i = 0; i < 5+2; ++i) {
 		std::cout << i << ": " << sorter.get() << "\n";
 	}
 
