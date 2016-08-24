@@ -14,7 +14,10 @@ else
 endif
 
 all: target/hgc target/hgcpp
+	######## Testing from C
 	target/hgc
+
+	######## Testing from C++
 	target/hgcpp
 
 target:

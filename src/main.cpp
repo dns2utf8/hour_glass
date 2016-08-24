@@ -7,10 +7,10 @@ int main() {
 
 	IntSorterFacade sorter {};
 
+	sorter.put(23);
+	sorter.put(13);
 	sorter.put(6);
 	sorter.put(12);
-	sorter.put(13);
-	sorter.put(23);
 	sorter.put(42);
 
 	// Iterate over all values and exhaust the container by 2

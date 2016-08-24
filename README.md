@@ -21,3 +21,52 @@ make
 * `make`
 * `clang` + `clang++` or `gcc` + `g++` with c11 and c++11. Do not mix the compilers and please run `make clean` when switching.
 * `cargo` and `rustc` >= 1.11.0
+
+## Expexted output:
+
+```bash
+$ make
+mkdir -p target
+clang -std=c11 -o target/main_c.o -c src/main.c
+cargo build
+   Compiling hour_glass v0.1.0 (file:///home/vp/rust/hour_glass)
+note: link against the following native artifacts when linking against this static library
+note: the order and any duplication can be significant on some platforms, and so may need to be preserved
+note: library: dl
+note: library: pthread
+note: library: gcc_s
+note: library: c
+note: library: m
+note: library: rt
+note: library: util
+clang -o target/hgc target/main_c.o target/debug/libintsorter.a -Wl,--gc-sections -lpthread
+clang++ -std=c++11 -o target/main_cpp.o -c src/main.cpp
+clang++ -o target/hgcpp target/main_cpp.o target/debug/libintsorter.a -Wl,--gc-sections -lpthread
+######## Testing from C
+target/hgc
+Hi C
+0: 42
+1: 23
+2: 13
+3: 12
+4: 6
+5: 0
+6: 0
+Destroy IntSorter Instance
+Bye C
+######## Testing from C++
+target/hgcpp
+Hi C++
+0: 42
+1: 23
+2: 13
+3: 12
+4: 6
+5: 0
+6: 0
+Bye C++
+Destroy IntSorter Instance
+```
+
+Note the reverse order of rusts "Destroy IntSorter Instance" message.
+The reason is in C we explicitily destroy the `IntSorter` and in C++ the end of the scope destroys the object.

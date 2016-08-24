@@ -11,14 +11,14 @@
 
 int main(int argc, char* argv[]) {
 
-	printf("Hi\n");
+	printf("Hi C\n");
 
 	sorter_t s = sorter_new();
 
+	sorter_put(s, 23);
+	sorter_put(s, 13);
 	sorter_put(s, 6);
 	sorter_put(s, 12);
-	sorter_put(s, 13);
-	sorter_put(s, 23);
 	sorter_put(s, 42);
 
 	// Iterate over all values and exhaust the container by 2
@@ -28,7 +28,7 @@ int main(int argc, char* argv[]) {
 
 	sorter_cleanup(s);
 
-	printf("Bye\n");
+	printf("Bye C\n");
 
 	return 0;
 }
