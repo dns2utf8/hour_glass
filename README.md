@@ -19,7 +19,7 @@ make
 ## Requirements
 
 * `make`
-* `clang` + `clang++` or `gcc` + `g++` with c11 and c++11. Do not mix the compilers and please run `make clean` when switching.
+* `clang` or `clang++` or `gcc` or `g++` with c11 and c++11. You may mix the compilers, please run `make clean` when switching.
 * `cargo` and `rustc` >= 1.11.0
 
 ## Expexted output:
