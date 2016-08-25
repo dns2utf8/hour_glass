@@ -29,6 +29,9 @@ target/hgc: target/main_c.o target/debug/libintsorter.a
 target/hgcpp: target/main_cpp.o target/debug/libintsorter.a
 	$(CXX) -o $@ $^ $(LDFLAGS)
 
+target/hgcpp_debug: target/main_cpp.o target/debug/libintsorter.a
+	$(CXX) -fsanitize=undefined -fsanitize=leak -fsanitize=memory -fno-omit-frame-pointer -o $@ $^ $(LDFLAGS)
+
 target/debug/libintsorter.a: src/lib.rs Cargo.toml
 	cargo build
 
