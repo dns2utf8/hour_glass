@@ -18,15 +18,16 @@ impl IntSorter {
 }
 
 #[no_mangle]
-pub extern "C" fn sorter_new() -> Box<IntSorter> {
-  Box::new( IntSorter::new() )
+pub extern "C" fn sorter_new() -> *mut IntSorter {
+  Box::into_raw( Box::new( IntSorter::new() ) )
 }
 
 #[no_mangle]
-pub extern "C" fn sorter_cleanup(s : Box<IntSorter>) {
+pub extern "C" fn sorter_cleanup(s : *mut IntSorter) {
   println!("Destroy IntSorter Instance");
-  // Explicit drop removes warning
-  drop(s);
+  unsafe {
+   Box::from_raw(s);
+  }
 }
 
 
