@@ -15,7 +15,7 @@ struct IntSorterFacade {
 		sorter = sorter_new();
 	}
 
-	virtual ~IntSorterFacade() {
+	~IntSorterFacade() {
 		sorter_cleanup(sorter);
 	}
 
