@@ -9,7 +9,7 @@
 
 #include "hour_glass_worker.h"
 
-int main(int argc, char* argv[]) {
+int main() {
 
 	printf("Hi C\n");
 
