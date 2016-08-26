@@ -11,13 +11,10 @@
 #include "hour_glass_worker.h"
 
 struct IntSorterFacade {
-private:
-	sorter_t sorter = nullptr;
-
-public:
 	IntSorterFacade() {
 		sorter = sorter_new();
 	}
+
 	virtual ~IntSorterFacade() {
 		sorter_cleanup(sorter);
 	}
@@ -29,6 +26,9 @@ public:
 	void put(const int& i) {
 		sorter_put(sorter, i);
 	}
+
+private:
+	sorter_t sorter = nullptr;
 };
 
 
