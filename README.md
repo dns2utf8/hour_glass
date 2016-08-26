@@ -13,7 +13,7 @@ If you would like to add/fix or change something, send a PR or open an issue.
 Run:
 
 ```
-make
+make clean all optimized
 ```
 
 ## Requirements
