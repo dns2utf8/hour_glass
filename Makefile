@@ -30,16 +30,16 @@ target/hgcpp: target/main_cpp.o target/debug/libintsorter.a
 	$(CXX) -o $@ $^ $(LDFLAGS)
 
 target/hgcpp_debug: target/main_cpp.o target/debug/libintsorter.a
-	$(CXX) -fsanitize=undefined -fsanitize=leak -fsanitize=memory -fno-omit-frame-pointer -o $@ $^ $(LDFLAGS)
+	$(CXX) -Wall -Werror -pedantic -fsanitize=undefined -fsanitize=leak -fsanitize=memory -fno-omit-frame-pointer -o $@ $^ $(LDFLAGS)
 
 target/debug/libintsorter.a: src/lib.rs Cargo.toml
 	cargo build
 
 target/main_c.o: src/main.c | target
-	$(CC) -std=c11 -o $@ -c $<
+	$(CC) -Wall -Werror -pedantic -std=c11 -o $@ -c $<
 
 target/main_cpp.o: src/main.cpp | target
-	$(CXX) -std=c++11 -o $@ -c $<
+	$(CXX) -Wall -Werror -pedantic -std=c++11 -o $@ -c $<
 
 clean:
 	rm -rf target
