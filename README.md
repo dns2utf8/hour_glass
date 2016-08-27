@@ -8,6 +8,7 @@ This is based upon the work of [Alex's Rust FFI Examples](https://github.com/ale
 
 * The rust library is included as a static library.
 * The C++ facade lives inside the `rust::` namespace.
+* A C++ `std::unique_ptr` manages the pointer to the Rust `IntSorter` ensuring it will never pass a nullpointer to the Rust functions. This prevents undefined behavior.
 
 # Contributions
 
