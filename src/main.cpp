@@ -5,7 +5,7 @@
 int main() {
 	std::cout << "Hi C++\n";
 
-	IntSorterFacade sorter {};
+	rust::IntSorterFacade sorter {};
 
 	sorter.put(23);
 	sorter.put(13);
