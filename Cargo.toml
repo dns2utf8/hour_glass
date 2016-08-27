@@ -1,7 +1,7 @@
 [package]
 name = "hour_glass"
 version = "0.1.0"
-authors = ["vp"]
+authors = ["Stefan Schindler <stefan@estada.ch>"]
 
 [lib]
 name = "intsorter"

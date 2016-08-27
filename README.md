@@ -2,7 +2,12 @@
 
 This is a PoC (Proof of Concept) using Rust as a Backend for C++.
 
-This is based upon the work of [Alex's Rust FFI Examples](https://github.com/alexcrichton/rust-ffi-examples/)
+This is based upon the work of [Alex's Rust FFI Examples](https://github.com/alexcrichton/rust-ffi-examples/).
+
+## How it works
+
+* The rust library is included as a static library.
+* The C++ facade lives inside the `rust::` namespace.
 
 # Contributions
 
@@ -14,6 +19,11 @@ Run:
 
 ```
 make clean all optimized
+```
+
+For a debug build run:
+```
+make clean all
 ```
 
 ## Requirements

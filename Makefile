@@ -13,6 +13,8 @@ ifneq ($(findstring optimized,$(MAKECMDGOALS)),)
 	CXXFLAGS := -O2 $(CXXFLAGS)
 	RUST_LIB := target/release/libintsorter.a
 else
+	CFLAGS := -g $(CFLAGS)
+	CXXFLAGS := -g $(CXXFLAGS)
 	RUST_LIB := target/debug/libintsorter.a
 endif
 
