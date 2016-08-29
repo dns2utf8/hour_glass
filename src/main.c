@@ -10,10 +10,12 @@
 #include "hour_glass_worker.h"
 
 int main() {
+	int i;
+	sorter_t s;
 
 	printf("Hi C\n");
 
-	sorter_t s = sorter_new();
+	s = sorter_new();
 
 	sorter_put(s, 23);
 	sorter_put(s, 13);
@@ -21,8 +23,8 @@ int main() {
 	sorter_put(s, 12);
 	sorter_put(s, 42);
 
-	// Iterate over all values and exhaust the container by 2
-	for (int i = 0; i < 5 + 2; ++i) {
+	/* Iterate over all values and exhaust the container by 2 */
+	for (i = 0; i < 5 + 2; ++i) {
 		printf("%i: %i\n", i, sorter_get(s));
 	}
 

@@ -5,7 +5,7 @@ CXX = clang++
 #CC = gcc
 #CXX = g++
 
-CFLAGS := -std=c11 -Wall -Werror -pedantic
+CFLAGS := -std=c89 -Wall -Werror -pedantic
 CXXFLAGS := -std=c++11 -Wall -Werror -pedantic
 
 ifneq ($(findstring optimized,$(MAKECMDGOALS)),)
