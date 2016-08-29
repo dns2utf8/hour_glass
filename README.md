@@ -32,7 +32,7 @@ make clean all
 ## Requirements
 
 * `make`
-* `clang` or `clang++` or `gcc` or `g++` with c11 and c++11. You may mix the compilers, please run `make clean` when switching.
+* `clang` or `clang++` or `gcc` or `g++` with at least c89 and c++11. You may mix the compilers, please run `make clean` when switching.
 * `cargo` and `rustc` >= 1.11.0
 
 ## Expexted output:
@@ -40,9 +40,9 @@ make clean all
 ```bash
 $ make
 mkdir -p target
-clang -std=c11 -o target/main_c.o -c src/main.c
-cargo build
-   Compiling hour_glass v0.1.0 (file:///home/vp/rust/hour_glass)
+clang -g -std=c89 -Wall -Werror -pedantic -o target/main_c.o -c src/main.c
+cargo build 
+   Compiling hour_glass v0.1.0 (file:///home/vp/tmp/hour_glass)
 note: link against the following native artifacts when linking against this static library
 note: the order and any duplication can be significant on some platforms, and so may need to be preserved
 note: library: dl
@@ -52,9 +52,9 @@ note: library: c
 note: library: m
 note: library: rt
 note: library: util
-clang -o target/hgc target/main_c.o target/debug/libintsorter.a -Wl,--gc-sections -lpthread
-clang++ -std=c++11 -o target/main_cpp.o -c src/main.cpp
-clang++ -o target/hgcpp target/main_cpp.o target/debug/libintsorter.a -Wl,--gc-sections -lpthread
+clang -g -std=c89 -Wall -Werror -pedantic -o target/hgc target/main_c.o target/debug/libintsorter.a -Wl,--gc-sections -lpthread
+clang++ -g -std=c++11 -Wall -Werror -pedantic -o target/main_cpp.o -c src/main.cpp
+clang++ -g -std=c++11 -Wall -Werror -pedantic -o target/hgcpp target/main_cpp.o target/debug/libintsorter.a -Wl,--gc-sections -lpthread
 ######## Testing from C
 target/hgc
 Hi C
