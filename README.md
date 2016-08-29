@@ -10,6 +10,8 @@ This is based upon the work of [Alex's Rust FFI Examples](https://github.com/ale
 * The C++ facade lives inside the `rust::` namespace.
 * A C++ `std::unique_ptr` manages the pointer to the Rust `IntSorter` ensuring it will never pass a nullpointer to the Rust functions. This prevents undefined behavior.
 
+![hg_pic.png](hg_pic.png)
+
 # Contributions
 
 If you would like to add/fix or change something, send a PR or open an issue.
