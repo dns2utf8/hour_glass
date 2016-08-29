@@ -35,7 +35,7 @@ make clean all
 * `clang` or `clang++` or `gcc` or `g++` with at least c89 and c++11. You may mix the compilers, please run `make clean` when switching.
 * `cargo` and `rustc` >= 1.11.0
 
-## Expexted output:
+## Expected output:
 
 ```bash
 $ make
