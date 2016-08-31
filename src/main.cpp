@@ -1,3 +1,10 @@
+/*
+ * main.cpp
+ *
+ *  Created on: 06.08.2016
+ *      Author: Stefan Schindler
+ */
+
 #include <iostream>
 
 #include "int_sorter_facade.h"

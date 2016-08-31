@@ -2,7 +2,7 @@
  * hour_glass_worker.h
  *
  *  Created on: 06.08.2016
- *      Author: vp
+ *      Author: Stefan Schindler
  */
 
 #ifndef HOUR_GLASS_WORKER_H_

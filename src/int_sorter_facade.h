@@ -2,7 +2,7 @@
  * hour_glass_facade.h
  *
  *  Created on: 06.08.2016
- *      Author: vp
+ *      Author: Stefan Schindler
  */
 
 #ifndef INT_SORTER_FACADE_H_

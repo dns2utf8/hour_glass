@@ -2,7 +2,7 @@
  * main.c
  *
  *  Created on: 06.08.2016
- *      Author: vp
+ *      Author: Stefan Schindler
  */
 
 #include <stdio.h>
