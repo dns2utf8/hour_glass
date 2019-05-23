@@ -1,6 +1,10 @@
 
+# In case the user uses a global build cache for rust
+CARGO_TARGET_DIR = ./target/
+
 CC = clang
 CXX = clang++
+
 
 #CC = gcc
 #CXX = g++
@@ -21,7 +25,7 @@ endif
 ifeq ($(shell uname),Darwin)
     LDFLAGS := -Wl,-dead_strip
 else
-    LDFLAGS := -Wl,--gc-sections -lpthread
+    LDFLAGS := -Wl,--gc-sections -lpthread -ldl
 endif
 
 all: target/hgc target/hgcpp
